@@ -2,7 +2,7 @@ const SalesOrderRepository = require('../repositories/salesOrderRepository');
 const ItemService = require('./itemService');
 const {generateSalesOrderId, generateSalesOrderDetailId} = require('../utils/generateId');
 const {calTotalOrderCost} = require('../utils/calculate');
-const {updateQuantityAfterSales} = require('../utils/manageStock');
+const {updateAfterSales} = require('../utils/manageStock');
 
 class SalesOrderService{
     async getSalesOrderByID(id){

@@ -15,7 +15,6 @@ class PurchaseRequestService{
     async createPurchaseRequest(data){
         try{
             data.id = generatePurchaseRequestId();
-            console.log(data)
             const newPurchaseRequest = await PurchaseRequestRepository.createPurchaseRequest(data);
             data.items.forEach(async item => {
                 item.id = generatePurchaseRequestDetailId(data.id);

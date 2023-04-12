@@ -14,7 +14,6 @@ class InventoryService {
         const itemLeadTime = item.lead_time;
         const rop = calculate.calReorderPoint(itemLeadTime, data.safety_stock, data.daily_consume);
         data.reorder_point = rop;
-        console.log(data)
         return await InventoryRepository.createInventory(data);
     }
 
